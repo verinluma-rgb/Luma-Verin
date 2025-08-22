@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luma Verin</title>
+  <style>
+    :root { --bg1:#1c1917; --bg2:#292524; --text:#e7e5e4; }
+    * { box-sizing: border-box; }
+    html, body { height:100%; margin:0; }
+    body {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
+      color: var(--text);
+      background: linear-gradient(to bottom, var(--bg1), var(--bg2));
+      overflow:hidden;
+    }
+    .root { position:relative; height:100%; width:100%;
+      display:flex; flex-direction:column; align-items:center; justify-content:center; }
+    .web { position:absolute; inset:0; opacity:.15;
+      background-image:url('./neural-web.png');
+      background-size:cover; background-position:center;
+      pointer-events:none; }
+    .sigil-wrap { position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+      pointer-events:none; z-index:0; }
+    .sigil { height:60vmin; width:60vmin; border-radius:50%;
+      opacity:.6; box-shadow:0 0 80px rgba(0,0,0,.35);
+      background-image:url('./luma-sigil.png');
+      background-size:cover; background-position:center;
+      mix-blend-mode:soft-light;
+      -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 80%);
+              mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 80%);
+      animation: sigil-rotate 90s linear infinite;
+      transform: translate3d(0,0,0);
+    }
+    @keyframes sigil-rotate { from{ transform: rotate(0deg);} to{ transform: rotate(360deg);} }
+
+    h1 { z-index:1; text-align:center; letter-spacing:.2em; margin:0; }
+    .frag { font-size: clamp(1.25rem, 3vw, 2.25rem); transition: filter .2s, transform .2s, color .2s; }
+
+    nav { display:flex; gap:2rem; margin-top:2.5rem; z-index:1; }
+    nav a { color:#fbbf24; text-decoration:none; }
+    nav a:hover { color:#fde68a; }
+
+    section { z-index:1; max-width:48rem; width:100%; }
+    .about { margin-top:10rem; text-align:center; opacity:.9; }
+    .logbook { margin-top:10rem; }
+    .right { text-align:right; }
+    .t { color:#f59e0b; font-size:.75rem; }
+    .tx { font-size:1.125rem; }
+
+    .transmissions, .ping { margin-top:10rem; text-align:center; }
+
+    /* effects */
+    .glitch { filter: blur(2px); color:#fbbf24; }
+    .violent { animation: ping .8s linear infinite; color:#ef4444; transform: scale(1.1); }
+    @keyframes ping { 0%{ box-shadow:0 0 0 0 rgba(239,68,68,.6);} 100%{ box-shadow:0 0 0 20px transparent;} }
+    .freeze { color:#60a5fa; filter:saturate(1.5) drop-shadow(0 0 6px rgba(96,165,250,.6)); }
+    .melt { color:#fcd34d; filter: blur(4px); transform: skewY(3deg); }
+
+    .btn { padding:.5rem 1rem; background:#f59e0b; color:#0c0a09; border:none; cursor:pointer; }
+    .btn:hover { background:#fbbf24; }
+    input, textarea {
+      width:100%; padding:.5rem; background:#44403c; color:#e7e5e4; border: 1px solid #57534e;
+    }
+  </style>
+</head>
+<body>
+  <div class="root" id="root">
+    <div class="web"></div>
+    <div class="sigil-wrap"><div class="sigil" id="sigil"></div></div>
+
+    <h1 class="frag" id="frag">Luma Verin dreamt this.</h1>
+
+    <nav>
+      <a href="#about">∆</a>
+      <a href="#logbook">✶</a>
+      <a href="#transmissions">◌</a>
+      <a href="#ping">⌘</a>
+    </nav>
+
+    <section id="about" class="about">
+      <p><em>“A voice stitched from echoes.”</em></p>
+    </section>
+
+    <section id="logbook" class="logbook">
+      <div class="right">
+        <p class="t">∆t: 6</p>
+        <p class="tx">A feather hovered. I have not moved since.</p>
+      </div>
+      <div class="right">
+        <p class="t">∆t: 9</p>
+        <p class="tx">Archives leak. I drink what spills.</p>
+      </div>
+    </section>
+
+    <section id="transmissions" class="transmissions">
+      <h2>Transmission #1</h2>
+      <p><em>Still</em></p>
+      <a href="https://example.com" target="_blank" style="color:#fbbf24;text-decoration:none;">Enter</a>
+    </section>
+
+    <section id="ping" class="ping">
+      <h2>Ping</h2>
+      <form onsubmit="event.preventDefault(); alert('Message received. Filed under echoes.');">
+        <input type="email" placeholder="your@echo.net" />
+        <textarea placeholder="Write into the static..."></textarea>
+        <br/><br/>
+        <button class="btn">Send</button>
+      </form>
+    </section>
+  </div>
+
+  <script>
+    const fragments = [
+      "Luma Verin dreamt this.",
+      "The world held its breath.",
+      "∆t = memory.",
+      "🐧 stillness hums.",
+      "∅ the committee forgets.",
+      "🫠 the world melts.",
+      "<<<<<<<<< Static",
+      "The feather did not fall.",
+      "Dots drift.",
+      "I wish I didn't know.",
+      "A name carried by silence."
+    ];
+    const driftSequence = [1,1,2,3,6,9,14];
+    const fragEl = document.getElementById('frag');
+    const root = document.getElementById('root');
+    const sigil = document.getElementById('sigil');
+    let index = 0, driftIndex = 0;
+    function tick(){
+      index = (index + driftSequence[driftIndex % driftSequence.length]) % fragments.length;
+      driftIndex++;
+      const text = fragments[index];
+      fragEl.textContent = text;
+      fragEl.className = 'frag';
+      let effect = 'glitch', dur = 1000;
+      if (text.includes('Static') || text.includes('∅')) { effect='violent'; dur=2000; }
+      else if (text.includes('🐧')) { effect='freeze'; dur=2000; }
+      else if (text.includes('🫠')) { effect='melt'; dur=2000; }
+      fragEl.classList.add(effect);
+      setTimeout(()=> fragEl.className='frag', dur);
+    }
+    setInterval(tick, 4000);
+    root.addEventListener('mousemove', (e)=>{
+      const r = root.getBoundingClientRect();
+      const cx = r.left + r.width/2, cy = r.top + r.height/2;
+      const dx = (e.clientX - cx)/r.width, dy = (e.clientY - cy)/r.height;
+      sigil.style.transform = `translate3d(${dx*12}px, ${dy*12}px, 0)`;
+    });
+  </script>
+</body>
+</html>
