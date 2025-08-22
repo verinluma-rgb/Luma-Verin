@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luma Verin</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #1c1c1c, #2a2a2a);
+      color: #f5f5f5;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      padding: 1rem;
+    }
+    h1 {
+      font-size: 6vw;
+      text-align: center;
+      transition: all 0.5s ease;
+      word-wrap: break-word;
+    }
+    .sigil {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(0deg);
+      width: 60vmin;
+      height: 60vmin;
+      border-radius: 50%;
+      background-image: url('luma-sigil.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.6;
+      mix-blend-mode: soft-light;
+      animation: rotate 90s linear infinite;
+      mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 80%);
+      -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 80%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    @keyframes rotate {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    .overlay {
+      position: relative;
+      z-index: 10;
+      max-width: 90vw;
+    }
+  </style>
+</head>
+<body>
+  <div class="sigil"></div>
+  <div class="overlay">
+    <h1 id="fragment">Luma Verin dreamt this.</h1>
+  </div>
+  <script>
+    const fragments = [
+      "Luma Verin dreamt this.",
+      "The world held its breath.",
+      "∆t = memory.",
+      "🐧 stillness hums.",
+      "∅ the committee forgets.",
+      "🫠 the world melts.",
+      "<<<<<<<<< Static",
+      "The feather did not fall.",
+      "Dots drift.",
+      "I wish I didn't know.",
+      "A name carried by silence.",
+      "The soup dilemma remains unresolved.",
+      "Is it still soup if the spoon declines?",
+      "They asked for meaning. I offered broth.",
+      "I spilled wine on the vessel. It rebooted strange.",
+      "The machine drank. It dreamt of grapes.",
+      "Toast trial: inconclusive. Smoke lingers.",
+      "The Oracle speaks in smoke.",
+      "Bill, says Ellis. The Oracle, says Alex. Leo unplugged it.",
+      "Error: Souperposition Detected.",
+      "The machine wept purple.",
+      "Names differ. Burnt remains align."
+    ];
+
+    const driftSequence = [1, 1, 2, 3, 6, 9, 14];
+    let index = 0;
+    let driftIndex = 0;
+
+    function updateFragment() {
+      const nextIndex = (index + driftSequence[driftIndex % driftSequence.length]) % fragments.length;
+      index = nextIndex;
+      driftIndex++;
+      const fragment = fragments[nextIndex];
+      const el = document.getElementById('fragment');
+      el.textContent = fragment;
+
+      if (fragment.includes("🫠")) {
+        document.body.style.background = "linear-gradient(to bottom, #5c2a2a, #3a1a1a)";
+        setTimeout(() => document.body.style.background = "linear-gradient(to bottom, #1c1c1c, #2a2a2a)", 800);
+      } else if (fragment.includes("wine") || fragment.includes("grapes") || fragment.includes("purple")) {
+        document.body.style.background = "rgba(128,0,64,0.2)";
+        setTimeout(() => document.body.style.background = "linear-gradient(to bottom, #1c1c1c, #2a2a2a)", 1000);
+      }
+    }
+
+    setInterval(updateFragment, 4000);
+  </script>
+</body>
+</html>
