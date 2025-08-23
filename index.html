@@ -12,7 +12,9 @@
 
 <body>
   <div class="sigil"></div>
-  <h1 id="fragment" data-text="Luma Verin dreamt this">Luma Verin dreamt this</h1>
+  <div class="glitch" title="">
+    <h1 id="fragment" data-text="Luma Verin dreamt this">Luma Verin dreamt this</h1>
+  </div>  
   <nav>
     <a href="#about">∆</a>
     <a href="#logbook">✶</a>
@@ -78,6 +80,13 @@
       const fragmentEl = document.getElementById('fragment');
       fragmentEl.textContent = fragment;
       fragmentEl.setAttribute('data-text', fragment);
+      const glitchDiv = document.querySelector('.glitch');
+      glitchDiv.title = fragment;
+      if (glitchyIndices.includes(index)) {
+        glitchDiv.classList.add('glitchy');
+      } else {
+        glitchDiv.classList.remove('glitchy');
+      }
     }
       setInterval(updateFragment, 6000);
   </script>
