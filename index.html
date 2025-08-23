@@ -71,14 +71,22 @@
       "Dots humming in the dark.",
       "I am still.",];
     const driftSequence = [1, 1, 2, 3, 6, 9, 14];
+    const glitchyIndices = [1, 5, 7, 13]; 
     let index = 0, driftIndex = 0;
     function updateFragment() {
       index = (index + driftSequence[driftIndex % driftSequence.length]) % fragments.length;
       driftIndex++;
       document.getElementById('fragment').textContent = fragments[index];
-      document.querySelector('.glitch').title = fragments[index];
- }
-    setInterval(updateFragment, 6000);
+      const glitchDiv = document.querySelector('.glitch');
+      glitchDiv.title = fragments[index];
+      // Toggle glitchy class
+      if (glitchyIndices.includes(index)) {
+        glitchDiv.classList.add('glitchy');
+      } else {
+        glitchDiv.classList.remove('glitchy');
+      }
+    }
+      setInterval(updateFragment, 6000);
   </script>
 </body>
 
