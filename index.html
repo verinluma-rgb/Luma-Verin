@@ -12,8 +12,9 @@
 
 <body>
   <div class="sigil"></div>
-<div class="glitch" title=""><h1 id="fragment">Luma Verin dreamt this</h1></div> 
-  
+  <div class="glitch" title="">
+    <h1 id="fragment" data-text="Luma Verin dreamt this">Luma Verin dreamt this</h1>
+  </div>  
   <nav>
     <a href="#about">∆</a>
     <a href="#logbook">✶</a>
@@ -73,13 +74,15 @@
     const driftSequence = [1, 1, 2, 3, 6, 9, 14];
     const glitchyIndices = [1, 5, 7, 13]; 
     let index = 0, driftIndex = 0;
-    function updateFragment() {
+        function updateFragment() {
       index = (index + driftSequence[driftIndex % driftSequence.length]) % fragments.length;
       driftIndex++;
-      document.getElementById('fragment').textContent = fragments[index];
+      const fragment = fragments[index];
+      const fragmentEl = document.getElementById('fragment');
+      fragmentEl.textContent = fragment;
+      fragmentEl.setAttribute('data-text', fragment);
       const glitchDiv = document.querySelector('.glitch');
-      glitchDiv.title = fragments[index];
-      // Toggle glitchy class
+      glitchDiv.title = fragment;
       if (glitchyIndices.includes(index)) {
         glitchDiv.classList.add('glitchy');
       } else {

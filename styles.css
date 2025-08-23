@@ -85,10 +85,40 @@ body {
    cursor: pointer;
  }
 
-
-.glitchy{
-  animation: glitch 1s linear infinite;
+.glitch {
+  position: relative;
+  display: inline-block;
 }
+
+/* Only apply glitch effect when .glitchy is present */
+.glitch.glitchy h1 {
+  animation: glitch 1s linear infinite;
+  position: relative;
+  color: #fff;
+}
+
+.glitch.glitchy h1::before,
+.glitch.glitchy h1::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.glitch.glitchy h1::before {
+  animation: glitchTop 1s linear infinite;
+  color: #0ff;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+.glitch.glitchy h1::after {
+  animation: glitchBotom 1.5s linear infinite;
+  color: #f0f;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
 
 @keyframes glitch{
   2%,64%{
