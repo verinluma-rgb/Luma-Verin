@@ -12,7 +12,7 @@
 
 <body>
   <div class="sigil"></div>
-<div class="glitch" title="Luma Verin dreamt this.">Luma Verin dreamt this.</div> 
+<div class="glitch" title="Luma Verin dreamt this."><h1>Luma Verin dreamt this.</h1></div> 
   
   <nav>
     <a href="#about">∆</a>
@@ -76,7 +76,8 @@
       index = (index + driftSequence[driftIndex % driftSequence.length]) % fragments.length;
       driftIndex++;
       document.getElementById('fragment').textContent = fragments[index];
-    }
+      document.querySelector('.glitch').title = fragments[index];
+ }
     setInterval(updateFragment, 6000);
   </script>
 </body>
