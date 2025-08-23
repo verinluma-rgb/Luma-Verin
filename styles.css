@@ -41,8 +41,8 @@ body {
    position: fixed;
    top: 50%;
    left: 50%;
-   transform: translate(-50%, -50%) rotate(0deg);
-   width: 190vmin;
+   /* transform: translate(-50%, -50%) rotate(0deg); */
+   width: 90vmin;
    height: 60vmin;
    border-radius: 50%;
    background-image: url(bg.png);
@@ -50,7 +50,7 @@ body {
    background-position: top;
    opacity: 0.6;
    mix-blend-mode: luminosity;
-   animation: rotate 14s linear infinite;
+   /* animation: rotate 14s linear infinite; */
    mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 80%);
    -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 80%);
    pointer-events: none;
