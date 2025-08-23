@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luma Verin</title>
+  <script type="module">
+  import { useState, useEffect, useRef } from "react";
+
+// Exactly 11 fragments for the landing page, minimal and uncanny
+const fragments = [
+  "Luma Verin dreamt this.",
+  "The world held its breath.",
+  "∆t = memory.",
+  "🐧 stillness hums.",
+  "∅ the committee forgets.",
+  "🫠 the world melts.",
+  "<<<<<<<<< Static",
+  "The feather did not fall.",
+  "Dots drift.",
+  "I wish I didn't know.",
+  "A name carried by silence."
+];
+
+// Not-quite-Fibonacci sequence for stepping through fragments
+// 1,1,2,3,6,9,14 ...
+const driftSequence = [1, 1, 2, 3, 6, 9, 14];
+
+// This will be wrapped into an HTML file below for deployment
+
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-stone-900 text-stone-200 font-mono flex items-center justify-center min-h-screen">
+  <noscript>This site requires JavaScript to function properly.</noscript>
+</body>
+</html>
