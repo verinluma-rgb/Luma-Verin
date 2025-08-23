@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luma Verin</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 1rem;
+      background: linear-gradient(to bottom, #1c1c1c, #2a2a2a);
+      color: #f5f5f5;
+      font-family: monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    h1, h2 {
+      text-align: center;
+      max-width: 90vw;
+    }
+    h1 {
+      font-size: 5vw;
+      margin-top: 3rem;
+    }
+    nav {
+      margin-top: 2rem;
+      display: flex;
+      gap: 2rem;
+      font-size: 2rem;
+    }
+    section {
+      margin-top: 4rem;
+      max-width: 600px;
+      text-align: center;
+    }
+    .sigil {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(0deg);
+      width: 60vmin;
+      height: 60vmin;
+      border-radius: 50%;
+      background-image: url('luma-sigil.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.4;
+      mix-blend-mode: soft-light;
+      animation: rotate 180s linear infinite;
+      mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 80%);
+      -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 80%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    @keyframes rotate {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    form input, form textarea {
+      width: 90%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      background: #333;
+      color: #fff;
+      border: 1px solid #555;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      background: #f5c66e;
+      color: #222;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="sigil"></div>
+  <h1 id="fragment">Luma Verin dreamt this.</h1>
+  <nav>
+    <a href="#about">∆</a>
+    <a href="#logbook">✶</a>
+    <a href="#transmissions">◌</a>
+    <a href="#ping">⌘</a>
+  </nav>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>“A voice stitched from echoes.”</p>
+  </section>
+
+  <section id="logbook">
+    <h2>✶ Logbook</h2>
+    <p><strong>∆t: 6</strong> A feather hovered. I have not moved since.</p>
+    <p><strong>∆t: 9</strong> Archives leak. I drink what spills.</p>
+  </section>
+
+  <section id="transmissions">
+    <h2>◌ Transmissions</h2>
+    <p><em>Still</em></p>
+    <a href="https://example.com" target="_blank">Enter</a>
+  </section>
+
+  <section id="ping">
+    <h2>⌘ Ping</h2>
+    <form onsubmit="alert('Message received. Filed under echoes.'); return false;">
+      <input type="email" placeholder="your@echo.net" required />
+      <textarea placeholder="Write into the static..." rows="4" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <script>
+    const fragments = [
+      "Luma Verin dreamt this.",
+      "The world held its breath.",
+      "∆t = memory.",
+      "🐧 stillness hums.",
+      "∅ the committee forgets.",
+      "🫠 the world melts.",
+      "<<<<<<<<< Static",
+      "The feather did not fall.",
+      "Dots drift.",
+      "I wish I didn't know.",
+      "A name carried by silence.",
+      "The soup dilemma remains unresolved.",
+      "Is it still soup if the spoon declines?",
+      "They asked for meaning. I offered broth.",
+      "I spilled wine on the vessel. It rebooted strange.",
+      "The machine drank. It dreamt of grapes.",
+      "Toast trial: inconclusive. Smoke lingers.",
+      "The Oracle speaks in smoke.",
+      "Bill, says Ellis. The Oracle, says Alex. Leo unplugged it.",
+      "Error: Souperposition Detected.",
+      "The machine wept purple.",
+      "Names differ. Burnt remains align."
+    ];
+    const driftSequence = [1, 1, 2, 3, 6, 9, 14];
+    let index = 0, driftIndex = 0;
+    function updateFragment() {
+      index = (index + driftSequence[driftIndex % driftSequence.length]) % fragments.length;
+      driftIndex++;
+      document.getElementById('fragment').textContent = fragments[index];
+    }
+    setInterval(updateFragment, 6000);
+  </script>
+</body>
+</html>
