@@ -1,5 +1,6 @@
 .glitch-img1 {
   background: url(1.jpeg);
+  display: block;
 }
 
 .glitch-img1:before {
@@ -7,6 +8,7 @@
 }
 .glitch-img2 {
   background: url(2.jpeg);
+  display: none;
 }
 
 .glitch-img2:before {

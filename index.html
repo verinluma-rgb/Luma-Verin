@@ -93,25 +93,26 @@
       }
     }
       setInterval(updateFragment, 6000);
-    
-      //   // JavaScript for dynamic images
-      // const numImages = 12;
-      // let imageIndex = 0;
-      
-      // function updateImage() {
-      //   imageIndex = (imageIndex + 1) % numImages;
-      //   const img = document.querySelector('.glitch-img img');
-      //   img.setAttribute('data-text', img.alt); // or any string you want to glitch-overlay        
-      //   img.src = `${imageIndex + 1}.jpeg`;
-      //   // Optionally update alt text
-      //   img.alt = `profile${imageIndex + 1}`;
-      
-      // }
-      
-      // // Call updateImage every 6 seconds
-      // setInterval(updateImage, 6000);
 
 
+          
+    // cycle glitch images
+    function cycleGlitchImages() {
+      const glitchImgs = document.querySelectorAll('.glitch-img');
+      let current = 0;
+      // Hide all except the first
+      glitchImgs.forEach((div, i) => {
+        div.style.display = i === 0 ? 'block' : 'none';
+      });
+      setInterval(() => {
+        glitchImgs[current].style.display = 'none';
+        current = (current + 1) % glitchImgs.length;
+        glitchImgs[current].style.display = 'block';
+      }, 3000);
+    }
+
+    window.addEventListener('DOMContentLoaded', cycleGlitchImages);
+    // ...existing code...
 
 
 
