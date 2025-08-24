@@ -128,44 +128,6 @@ section {
   clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
 }
 
-.glitch-img {
-  position: relative;
-  display: inline-block;
-}
-
-.glitch.glitchy img {
-  animation: glitch 1s linear infinite;
-  position: relative;
-}
-
-.glitch.glitchy img::before,
-.glitch.glitchy img::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.8;
-  pointer-events: none;
-  z-index: 2;
-  mix-blend-mode: lighten;
-}
-
-.glitch.glitchy img::before {
-  animation: glitchTop 1s linear infinite;
-  /* Optionally tint or offset */
-  filter: drop-shadow(2px 0 #0ff);
-  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-}
-
-.glitch.glitchy img::after {
-  animation: glitchBotom 1.5s linear infinite;
-  /* Optionally tint or offset */
-  filter: drop-shadow(-2px 0 #f0f);
-  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-}
-
 @keyframes glitch{
   2%,64%{
     transform: translate(2px,0) skew(0deg);
