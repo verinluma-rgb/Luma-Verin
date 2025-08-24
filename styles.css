@@ -36,6 +36,9 @@ body {
     text-decoration: none;
     transition: color 0.3s;
  }  
+ nav a:hover {
+  color: #fff;
+}
  section {
    margin-top: 4rem;
    max-width: 600px;
