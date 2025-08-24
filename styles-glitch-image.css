@@ -1,4 +1,4 @@
-.glitch-img1 {
+/* .glitch-img1 {
   background: url(1.jpeg);
 }
 
@@ -11,7 +11,7 @@
 
 .glitch-img2:before {
   background: url(2.jpeg);
-}
+} */
 
 .glitch-container {
 	position: relative;
@@ -22,6 +22,7 @@
 
 .glitch-img
   {
+	background: url(1.jpeg);
     background-size: cover;
 	position: absolute;
 	top: 0;
@@ -32,20 +33,21 @@
 	transition: opacity 1s;
 	pointer-events: none;	
   }
-
+/* 
 .glitch-img.visible {
   opacity: 1;
   pointer-events: auto;
-}
+} */
 
-.glitch-img:before
+.glitch-img-before
   {
-    content: '';
+    /* content: ''; */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+	background: url(1.jpeg);
     background-size: cover; /* contain for split effect */
     opacity: .5;
     mix-blend-mode: hard-light;

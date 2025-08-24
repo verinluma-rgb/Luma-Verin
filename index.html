@@ -26,8 +26,8 @@
     <h2>About</h2>
     <p>Dreamer of dreams, collector of thoughts, truth-seer.</p>
     <div class="glitch-container">
-      <div class="glitch-img1 glitch-img"></div>
-      <div class="glitch-img2 glitch-img"></div>
+      <div class="glitch-img-before"></div>
+      <div class="glitch-img"></div>
     </div>
 </section>
 
@@ -98,27 +98,27 @@
 
 
           
-    // cycle glitch images
-    function cycleGlitchImages() {
-      const glitchImgs = document.querySelectorAll('.glitch-img');
-      let current = 0;
-      // Hide all except the first
-      glitchImgs.forEach((div, i) => {
-        // div.style.display = i === 0 ? 'block' : 'none';
-        div.classList.toggle('visible', i === 0);        
-      });
-      setInterval(() => {
-        // glitchImgs[current].style.display = 'none';
-        // current = (current + 1) % glitchImgs.length;
-        // glitchImgs[current].style.display = 'block';
-        glitchImgs[current].classList.remove('visible');
-        current = (current + 1) % glitchImgs.length;
-        glitchImgs[current].classList.add('visible');        
-      }, 3000);
-    }
-    
-    window.addEventListener('DOMContentLoaded', cycleGlitchImages);
-    // ...existing code...
+    // // cycle glitch images
+    // function cycleGlitchImages() {
+    //   const glitchImgs = document.querySelectorAll('.glitch-img');
+    //   let current = 0;
+    //   // Hide all except the first
+    //   glitchImgs.forEach((div, i) => {
+    //     // div.style.display = i === 0 ? 'block' : 'none';
+    //     div.classList.toggle('visible', i === 0);        
+    //   });
+    //   setInterval(() => {
+    //     // glitchImgs[current].style.display = 'none';
+    //     // current = (current + 1) % glitchImgs.length;
+    //     // glitchImgs[current].style.display = 'block';
+    //     glitchImgs[current].classList.remove('visible');
+    //     current = (current + 1) % glitchImgs.length;
+    //     glitchImgs[current].classList.add('visible');        
+    //   }, 3000);
+    // }
+
+    // window.addEventListener('DOMContentLoaded', cycleGlitchImages);
+    // // ...existing code...
 
 
 
