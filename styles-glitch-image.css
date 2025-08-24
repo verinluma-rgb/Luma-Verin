@@ -15,13 +15,28 @@
   background: url(2.jpeg);
 }
 
+.glitch-container {
+	position: relative;
+	width: 472px; /* Set to image width */
+	height: 552px; /* Set to image height */
+	overflow: hidden;
+}
+
 .glitch-img
   {
-    position: relative;
-    width: 472px;
-    height: 552px;
     background-size: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 1s;
+	pointer-events: none;	
   }
+
+.glitch-img.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 .glitch-img:before
   {
