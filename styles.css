@@ -31,6 +31,11 @@ body {
    font-size: 2rem;
  }
 
+  nav a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s;
+ }  
  section {
    margin-top: 4rem;
    max-width: 600px;
