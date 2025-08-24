@@ -5,12 +5,19 @@
 .glitch-img1:before {
   background: url(1.jpeg);
 }
+.glitch-img2 {
+  background: url(2.jpeg);
+}
+
+.glitch-img2:before {
+  background: url(2.jpeg);
+}
 
 .glitch-img
   {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 472px;
+    height: 552px;
     background-size: cover;
   }
 
