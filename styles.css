@@ -38,8 +38,9 @@ body {
  }  
  nav a:hover {
   color: #fff;
+  text-shadow: 0 0 8px #fff, 0 0 16px #fff;
 }
- section {
+section {
    margin-top: 4rem;
    max-width: 600px;
    text-align: center;
