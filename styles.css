@@ -128,6 +128,27 @@ section {
   clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
 }
 
+.glitch.glitchy img::before,
+.glitch.glitchy img::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.glitch.glitchy img::before {
+  animation: glitchTop 1s linear infinite;
+  /* color: #0ff; */
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+.glitch.glitchy img::after {
+  animation: glitchBotom 1.5s linear infinite;
+  /* color: #f0f; */
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
 
 @keyframes glitch{
   2%,64%{

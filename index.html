@@ -24,7 +24,10 @@
   <section id="about">
     <h2>About</h2>
     <p>Dreamer of dreams, collector of thoughts, truth-seer.</p>
-  </section>
+    <div class="glitch-img glitchy" title="">
+    <img src="1.jpeg" alt="profile1" />
+      </div>
+</section>
 
   <section id="logbook">
     <h2>✶ Logbook</h2>
@@ -54,6 +57,7 @@
   </section>
 
   <script>
+    // JavaScript for dynamic fragment updates
     const fragments = [
       "Luma Verin dreamt this.",
       "∆t = memory.",
@@ -89,6 +93,28 @@
       }
     }
       setInterval(updateFragment, 6000);
+    
+        // JavaScript for dynamic images
+      const numImages = 12;
+      let imageIndex = 0;
+      
+      function updateImage() {
+        imageIndex = (imageIndex + 1) % numImages;
+        const img = document.querySelector('.glitch-img img');
+        img.src = `${imageIndex + 1}.jpeg`;
+        // Optionally update alt text
+        img.alt = `profile${imageIndex + 1}`;
+      
+      }
+      
+      // Call updateImage every 6 seconds
+      setInterval(updateImage, 1000);
+
+
+
+
+
+    
   </script>
 </body>
 
