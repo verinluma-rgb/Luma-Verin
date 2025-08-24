@@ -101,7 +101,8 @@
       function updateImage() {
         imageIndex = (imageIndex + 1) % numImages;
         const img = document.querySelector('.glitch-img img');
-        img.setAttribute('data-text', img.alt); // or any string you want to glitch-overlay        img.src = `${imageIndex + 1}.jpeg`;
+        img.setAttribute('data-text', img.alt); // or any string you want to glitch-overlay        
+        img.src = `${imageIndex + 1}.jpeg`;
         // Optionally update alt text
         img.alt = `profile${imageIndex + 1}`;
       
