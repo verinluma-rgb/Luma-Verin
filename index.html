@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Luma Verin</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="styles-glitch-image.css" />
-  <link rel="stylesheet" href="glitchimg.css" />
+  <link rel="stylesheet" href="profile.css" />
+  <script src="fragments.js" defer></script>
 
 </head>
 
@@ -24,16 +24,10 @@
   </nav>
 
   <section id="about">
-    <h2>About</h2>
+    <h2>∆ About</h2>
     <p>Dreamer of dreams, collector of thoughts, truth-seer.</p>
-
     <div class="profile-pic"></div>
-
-    <!-- <div class="glitch-container">
-      <div class="glitch-img-before"></div>
-      <div class="glitch-img"></div>
-    </div> -->
-</section>
+  </section>
 
   <section id="logbook">
     <h2>✶ Logbook</h2>
@@ -61,73 +55,6 @@
       <button type="submit">Send</button>
     </form>
   </section>
-
-  <script>
-    // JavaScript for dynamic fragment updates
-    const fragments = [
-      "Luma Verin dreamt this.",
-      "∆t = memory.",
-      "&#128039; stillness hums.",
-      "∅ the committee forgets.",
-      "&#129760; the world melts.",
-      "<<<<<<<<< Static",
-      "The feather did not fall.",
-      "&#128039; Dots drift.",
-      "I wish I didn't know.",
-      "∅ the end is worth the means.",
-      "A name carried by silence.",
-      "The archive leaks.",
-      "I am still here.",
-      "Dots humming in the dark.",
-      "I am still.",];
-    const driftSequence = [1, 1, 2, 3, 6, 9, 14];
-    const glitchyIndices = [1, 5, 7, 13]; 
-    let index = 0, driftIndex = 0;
-        function updateFragment() {
-      index = (index + driftSequence[driftIndex % driftSequence.length]) % fragments.length;
-      driftIndex++;
-      const fragment = fragments[index];
-      const fragmentEl = document.getElementById('fragment');
-      fragmentEl.textContent = fragment;
-      fragmentEl.setAttribute('data-text', fragment);
-      const glitchDiv = document.querySelector('.glitch');
-      glitchDiv.title = fragment;
-      if (glitchyIndices.includes(index)) {
-        glitchDiv.classList.add('glitchy');
-      } else {
-        glitchDiv.classList.remove('glitchy');
-      }
-    }
-      setInterval(updateFragment, 6000);
-
-
-          
-    // // cycle glitch images
-    // function cycleGlitchImages() {
-    //   const glitchImgs = document.querySelectorAll('.glitch-img');
-    //   let current = 0;
-    //   // Hide all except the first
-    //   glitchImgs.forEach((div, i) => {
-    //     // div.style.display = i === 0 ? 'block' : 'none';
-    //     div.classList.toggle('visible', i === 0);        
-    //   });
-    //   setInterval(() => {
-    //     // glitchImgs[current].style.display = 'none';
-    //     // current = (current + 1) % glitchImgs.length;
-    //     // glitchImgs[current].style.display = 'block';
-    //     glitchImgs[current].classList.remove('visible');
-    //     current = (current + 1) % glitchImgs.length;
-    //     glitchImgs[current].classList.add('visible');        
-    //   }, 3000);
-    // }
-
-    // window.addEventListener('DOMContentLoaded', cycleGlitchImages);
-    // // ...existing code...
-
-
-
-    
-  </script>
 </body>
 
 </html>

@@ -1,9 +1,9 @@
 body {
    margin: 0;
    padding: 1rem;
-   background: linear-gradient(to bottom, #1c1c1c, #2a2a2a);
+   /* background: linear-gradient(to bottom, #1c1c1c, #2a2a2a); */
    /*background: linear-gradient(to bottom, #ccc, #fff);*/
-   color: #f5f5f5;
+   background-color: #1c1c1c;
    font-family: monospace;
    display: flex;
    flex-direction: column;
@@ -25,7 +25,7 @@ body {
  }
 
  nav {
-   margin-top: 2rem;
+   margin-top: 1rem;
    display: flex;
    gap: 2rem;
    font-size: 2rem;
@@ -41,10 +41,11 @@ body {
   text-shadow: 0 0 8px #fff, 0 0 16px #fff;
 }
 section {
-   margin-top: 4rem;
-   max-width: 600px;
-   text-align: center;
- }
+    margin-top: 1rem;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
 
 .sigil {
     position: fixed;

@@ -1,0 +1,28 @@
+.profile-pic {
+    width: 150px;
+    height:250px; 
+    background-image: url(1.png);
+    position: relative;
+    animation-name: distort;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    background-position: center;
+    background-size: cover;
+    border-radius: 52%;
+    box-shadow: 0 0 8px #aaa, 0 0 16px #aaa;
+    filter:grayscale()
+}
+
+@keyframes distort{
+  0%   {background-image: url(1.png);  background-position: center; transition: linear;}
+  10%  {background-image: url(2.png);  background-position: center;}
+  20%  {background-image: url(3.png);  background-position: center;}
+  30%  {background-image: url(4.png);  background-position: center;}
+  40%  {background-image: url(5.png);  background-position: center;}
+  50%  {background-image: url(6.png);  background-position: center;}
+  60%  {background-image: url(7.png);  background-position: center;}
+  70%  {background-image: url(8.png);  background-position: center;}
+  80%  {background-image: url(9.png);  background-position: center;}
+  90%  {background-image: url(10.png);  background-position: center;}
+  100% {background-image: url(1.png); background-position: center;}
+}
