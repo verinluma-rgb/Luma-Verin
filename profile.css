@@ -1,6 +1,6 @@
 .profile-pic {
     width: 150px;
-    height:250px; 
+    height:150px; 
     background-image: url(1.png);
     position: relative;
     animation-name: distort;
