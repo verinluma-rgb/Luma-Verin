@@ -10,8 +10,15 @@
   background-position: center;
 }
 
+@keyframes distort{
+  0%   {background-image: url(1.jpeg);  background-position: center; transition: linear;}
+  25%  {background-image: url(2.jpeg);  background-position: center;}
+  50%  {background-image: url(3.jpeg);  background-position: center;}
+  75%  {background-image: url(4.jpeg);  background-position: center;}
+  100% {background-image: url(1.jpeg); background-position: center;}
+}
 
-@keyframes distort {
+@keyframes distort-1 {
   0%   {background-image: url(1.jpeg);  background-position: 0px 0px;}
   10%  {background-image: url(1.jpeg); background-position: -1px 0px}
   15%  {background-image: url(1.jpeg); background-position: 2px 0px; }
@@ -44,7 +51,7 @@
   95%  {background-image: url(4.jpeg); background-position: 0px 0px; }
   97%  {background-image: url(4.jpeg); opacity: 0.5; transition: linear;}
   98%  {background-image: url(4.jpeg); opacity: .5; transition: linear;}
-  100%  {background-image: url(1.jpeg); opacity: 1; transition: linear; background-position: 0px 0px; }
+  100%  {background-image: url(1.jpeg); opacity: .5; transition: linear; background-position: 0px 0px; }
 /* 25%  {background-color:yellow;  opacity: 0.5;}
   50%  {background-color:blue;  opacity: 1;}
   75%  {background-color:green; opacity: 0.5;}
