@@ -1,7 +1,7 @@
 .profile-pic {
   width: 100px;
   height: 100px;
-  background-color: red;
+  /* background-color: red; */
   background-image: url(1.jpeg);
   position: relative;
   animation-name: distort;
