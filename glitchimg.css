@@ -4,14 +4,34 @@
   /* background-color: red; */
   background-image: url(1.jpeg);
   position: relative;
-  animation-name: distort;
+  animation-name: fade;
   animation-duration: 11s;
   animation-iteration-count: infinite;
+  background-position: center;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  34% {
+    opacity: 0;
+  }
+  88% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes distort {
-  0%   {background-image: url(1.jpeg); opacity: 1; }
-  10%  {background-image: url(1.jpeg); background-position: -10px, 10px; }
+  0%   {background-image: url(1.jpeg); transition: opacity 0.3s ease;
+ }
+  10%  {background-image: url(1.jpeg); background-position: -1px }
   15%  {background-image: url(1.jpeg); background-position: 5px, -10px; }
   20%  {background-image: url(1.jpeg); background-position: 0px, -2px; }
   25%  {background-image: url(1.jpeg); background-position: 0px, 0px; }
