@@ -1,0 +1,27 @@
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  background-image: url(1.jpeg);
+  position: relative;
+  animation-name: distort;
+  animation-duration: 11s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes distort {
+  0%   {background-image: url(1.jpeg); opacity: 1; }
+  10%  {background-image: url(1.jpeg); background-position: -10px, 10px; }
+  15%  {background-image: url(1.jpeg); background-position: 5px, -10px; }
+  20%  {background-image: url(1.jpeg); background-position: 0px, -2px; }
+  25%  {background-image: url(1.jpeg); background-position: 0px, 0px; }
+  26%  {background-image: url(1.jpeg); opacity: 0.5; transition: linear;}
+  27%  {background-image: url(2.jpeg); opacity: 1; }
+  30%  {background-image: url(2.jpeg); background-position: -10px, 10px; }
+  35%  {background-image: url(2.jpeg); background-position: 7px, -10px; }
+  /* 25%  {background-color:yellow;  opacity: 0.5;}
+  50%  {background-color:blue;  opacity: 1;}
+  75%  {background-color:green; opacity: 0.5;}
+  100% {background-color:red;  opacity: 1;} */
+}
+
