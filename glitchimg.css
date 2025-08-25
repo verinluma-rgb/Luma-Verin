@@ -13,7 +13,7 @@
 @keyframes distort{
   0%   {background-image: url(1.jpeg);  background-position: center; transition: linear;}
   25%  {background-image: url(2.jpeg);  background-position: center;}
-  50%  {background-image: url(3.jpeg);  background-position: center;}
+  50%  {background-image: url(8.jpeg);  background-position: center;}
   75%  {background-image: url(4.jpeg);  background-position: center;}
   100% {background-image: url(1.jpeg); background-position: center;}
 }
