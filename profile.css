@@ -1,8 +1,18 @@
+.profile-container {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  position: relative;
+  overflow:hidden;
+  border-radius: 50%;
+  border:1pcx solid red;
+}
+
 .profile-pic {
     width: 150px;
     height:150px; 
     background-image: url(1.png);
-    position: relative;
+    position: fixed;
     animation-name: distort;
     animation-duration: .1s;
     animation-iteration-count: infinite;
