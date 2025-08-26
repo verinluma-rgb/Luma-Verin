@@ -15,7 +15,7 @@
 }
 
 .profile-pic:hover {
-    animation-duration: 0s;
+  animation-play-state: paused;
 }
 
 @keyframes distort{
