@@ -10,7 +10,8 @@
     background-size: cover;
     border-radius: 50%;
     box-shadow: 0 0 8px #aaa, 0 0 16px #aaa;
-    filter:grayscale()
+    filter:grayscale();
+    margin:10px auto
 }
 
 @keyframes distort{
