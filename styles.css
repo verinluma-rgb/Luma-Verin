@@ -96,3 +96,18 @@ section {
    border: none;
    cursor: pointer;
  }
+
+ a.button {
+   padding: 0.5rem 1rem;
+   background: #f5c66e;
+   color: #222;
+   border: none;
+   cursor: pointer;
+   text-decoration: none;
+   display: inline-block;
+   text-align: center;
+  }
+
+a:hover, a:active {
+  background-color: red;
+}
