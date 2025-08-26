@@ -4,7 +4,7 @@
     background-image: url(1.png);
     position: relative;
     animation-name: distort;
-    animation-duration: 21.5s;
+    animation-duration: .1s;
     animation-iteration-count: infinite;
     background-position: center;
     background-size: cover;
@@ -12,6 +12,10 @@
     box-shadow: 0 0 8px #aaa, 0 0 16px #aaa;
     filter:grayscale();
     margin:10px auto
+}
+
+.profile-pic:hover {
+    animation-duration: 0s;
 }
 
 @keyframes distort{
