@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
   const profilePic = document.querySelector('.profile-pic');
-
   profilePic.addEventListener('mouseleave', () => {
-    profilePic.classList.remove('glitching'); // reset if already glitching
-    // Force reflow to restart animation
+    profilePic.classList.remove('glitching');
     void profilePic.offsetWidth;
     profilePic.classList.add('glitching');
-    // Remove the class after animation ends
     setTimeout(() => {
       profilePic.classList.remove('glitching');
-    }, 500); // match animation duration
+    }, 400); // match animation duration
+  });
+  profilePic.addEventListener('mouseenter', () => {
+    profilePic.classList.remove('glitching');
   });
 });

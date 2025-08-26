@@ -112,3 +112,31 @@
 .profile-pic.glitching {
   animation: profile-glitch 0.5s steps(1) 1;
 }
+.profile-pic::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 2;
+  /* Start with no effect */
+}
+
+.profile-pic.glitching::after {
+  opacity: 1;
+  animation: profile-glitch-burst 0.4s steps(2) 1;
+  background:
+    linear-gradient(90deg, rgba(255,0,0,0.3) 0%, transparent 100%),
+    linear-gradient(-90deg, rgba(0,255,255,0.3) 0%, transparent 100%);
+  mix-blend-mode: lighten;
+}
+
+@keyframes profile-glitch-burst {
+  0% { filter: none; transform: none; opacity: 1; }
+  20% { filter: blur(2px) brightness(2) contrast(2); transform: translate(-3px, 2px) skewX(8deg); }
+  40% { filter: blur(1px) hue-rotate(45deg); transform: translate(3px, -2px) skewY(-8deg); }
+  60% { filter: none; transform: none; }
+  80% { filter: blur(2px) brightness(2) contrast(2); transform: translate(-2px, 3px) skewX(-8deg); }
+  100% { filter: none; transform: none; opacity: 0; }
+}
