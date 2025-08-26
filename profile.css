@@ -95,3 +95,20 @@
   90%  { background-position: 40px -15px, 50px 20px; }
   100% { background-position: 0 0, 0 0; }
 }
+
+@keyframes profile-glitch {
+  0% { filter: none; transform: none; }
+  10% { filter: contrast(2) brightness(1.5) hue-rotate(30deg); transform: translate(-2px, 2px) skewX(5deg); }
+  20% { filter: contrast(0.5) brightness(2) hue-rotate(-30deg); transform: translate(2px, -2px) skewY(-5deg); }
+  30% { filter: none; transform: none; }
+  40% { filter: contrast(2) brightness(1.5) hue-rotate(-20deg); transform: translate(-4px, 1px) skewX(-8deg); }
+  50% { filter: contrast(0.5) brightness(2) hue-rotate(20deg); transform: translate(4px, -1px) skewY(8deg); }
+  60% { filter: none; transform: none; }
+  70% { filter: contrast(2) brightness(1.5) hue-rotate(10deg); transform: translate(-2px, 2px) skewX(5deg); }
+  80% { filter: contrast(0.5) brightness(2) hue-rotate(-10deg); transform: translate(2px, -2px) skewY(-5deg); }
+  100% { filter: none; transform: none; }
+}
+
+.profile-pic.glitching {
+  animation: profile-glitch 0.5s steps(1) 1;
+}
