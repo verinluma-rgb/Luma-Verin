@@ -110,7 +110,7 @@
 }
 
 .profile-pic.glitching {
-  animation: profile-glitch 0.5s steps(1) 1;
+  animation: profile-glitch-burst 0.5s steps(1) 1;
 }
 .profile-pic::after {
   content: "";
