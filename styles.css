@@ -61,7 +61,7 @@ section {
     background-position: center;
     opacity: 0.3;
     mix-blend-mode: luminosity;
-    animation: rotate 211s linear infinite;
+    animation: rotate 287s linear infinite;
     mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 80%);
     -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 80%);
     pointer-events: none;
