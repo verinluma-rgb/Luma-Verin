@@ -108,6 +108,6 @@ section {
    text-align: center;
   }
 
-a:hover, a:active {
-  background-color: red;
+a.button:hover, a.button:active {
+  box-shadow: 0 0 8px #f5c66e, 0 0 16px #f5c66e;
 }
