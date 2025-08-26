@@ -130,6 +130,7 @@
   mix-blend-mode: lighten;
   opacity: 0.5;
   animation: static-chaos 0.25s steps(1) infinite;
+  border-radius: 50%;
 }
 
 @keyframes static-roll {
@@ -150,3 +151,4 @@
   80%  { background-position: -10px 35px, 70px 60px; }
   90%  { background-position: 40px -15px, 50px 20px; }
   100% { background-position: 0 0, 0 0; }
+}
