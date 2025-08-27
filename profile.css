@@ -127,9 +127,9 @@
   60% { opacity: 1; filter: brightness(-1000%);}
   61% { transform: skewX(40deg); opacity: 1; filter: hue-rotate(90deg) saturate(100%)  brightness(50%) contrast(200%);}
   80% { opacity: 1; transform: scaleX(7); filter: blur(7);}
-  83% { transform: scale(1) skewX(89deg); opacity: 1; filter: hue-rotate(90deg) saturate(200%)  brightness(150%) contrast(200%);}
+  /* 83% { transform: scale(1) skewX(89deg); opacity: 1; filter: hue-rotate(90deg) saturate(200%)  brightness(150%) contrast(200%);}
   84% { transform: skewX(-86deg); opacity: 1; filter: hue-rotate(-90deg) saturate(200%)  brightness(150%) contrast(200%);}
-  85% { transform: skewX(-86deg); opacity: 1; filter: hue-rotate(-90deg) saturate(200%)  brightness(150%) contrast(200%);}
+  85% { transform: skewX(-86deg); opacity: 1; filter: hue-rotate(-90deg) saturate(200%)  brightness(150%) contrast(200%);} */
   90% { opacity: 1; filter: hue-rotate(-90deg) saturate(200%)  brightness(150%) contrast(200%);}
   
 }
