@@ -13,7 +13,7 @@
     background-image: url(1.png);
     position: relative;
     animation-name: distort;
-    animation-duration: .1s;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
     background-position: center;
     background-size: cover;
