@@ -111,7 +111,7 @@
   height: 150px;
   border-radius: 50%;
   overflow: hidden;
-  animation: alternate-reverse ghost 10s infinite;
+  animation: alternate-reverse ghost .4s 1;
 }
 @keyframes ghost {
   0%, 100% { opacity: 0; }
