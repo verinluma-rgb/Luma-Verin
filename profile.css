@@ -115,15 +115,14 @@
 @keyframes ghost {
   0%, 100% { opacity: 0; }
   10% { opacity: 1; filter: hue-rotate(-90deg) saturate(200%)  brightness(150%) contrast(200%);}
-  20% { opacity: 1; filter: brightness(1000%);}
   30% { opacity: 1; filter: hue-rotate(90deg) brightness(100%) contrast(200%);}
   40% { opacity: 1; filter: hue-rotate(-90deg) saturate(200%)  brightness(150%) contrast(200%);}
-  /* 50% { transform: skewX(86deg); opacity: 1; filter: hue-rotate(90deg) saturate(200%)  brightness(150%) contrast(200%);}
-  51% { transform: skewX(89deg); opacity: 1; filter: hue-rotate(90deg) saturate(200%)  brightness(150%) contrast(200%);}
-  52% { transform: skewX(-89deg); opacity: 1; filter: hue-rotate(90deg) saturate(200%)  brightness(150%) contrast(200%);}
-  53% { transform: skewX(89deg); opacity: 1; filter: hue-rotate(90deg) saturate(200%)  brightness(150%) contrast(200%);}
-  54% { transform: skewX(-86deg); opacity: 1; filter: hue-rotate(-90deg) saturate(200%)  brightness(150%) contrast(200%);}
-  55% { transform: skewX(40deg); opacity: 1; filter: hue-rotate(-90deg) saturate(100%)  brightness(50%) contrast(200%);} */
+  50% { transform: skewX(86deg); opacity: 1;}
+  51% { transform: skewX(89deg); opacity: 1;}
+  52% { transform: skewX(-89deg); opacity: .8;}
+  53% { transform: skewX(89deg);}
+  54% { transform: skewX(-86deg); opacity: 1;}
+  55% { transform: skewX(40deg); } 
   60% { opacity: 1; filter: brightness(-1000%);}
   61% { transform: skewX(40deg); opacity: 1; filter: hue-rotate(90deg) saturate(100%)  brightness(50%) contrast(200%);}
   80% { opacity: 1; transform: scaleX(7); filter: blur(7);}
