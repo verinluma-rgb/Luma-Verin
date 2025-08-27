@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     profilePic.classList.add('glitch-img');
     setTimeout(() => {
       profilePic.classList.remove('glitch-img');
-    }, 400); // match animation duration
+    }, 200); // match animation duration
   });
   profilePic.addEventListener('mouseenter', () => {
     profilePic.classList.remove('glitch-img');
