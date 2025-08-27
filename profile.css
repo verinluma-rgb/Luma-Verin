@@ -70,7 +70,7 @@
 
 .static-overlay {
   pointer-events: none;
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -107,11 +107,10 @@
 }
 .glitch-img {
   position: relative;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-  border:1px solid red;
+  /* width: 150px; */
+  /* height: 150px; */
+  /* border-radius: 50%; */
+  /* overflow: hidden; */
   animation: alternate-reverse ghost 10s infinite;
 }
 @keyframes ghost {
