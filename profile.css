@@ -115,7 +115,9 @@
   display: none;
   background-image: url(gltch.png);
   background-size: cover;
-  background-position: center;}
+  background-position: center;
+  filter: blur(1px)
+}
 
 .glitch-img.glitching {
     animation: ghost .4s 1 alternate-reverse;
@@ -129,7 +131,7 @@
   53% { transform: skewX(89deg);}
   54% { transform: skewY(-6deg); opacity: 1;}
   55% { transform: skewX(40deg); } 
-  80% { opacity: 1; transform: scaleX(7); filter: blur(7);}
+  80% { opacity: 1; transform: scaleX(7);}
   90% { opacity: 1; transform: skewX(-86deg)}
   
 }
