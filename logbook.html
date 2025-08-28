@@ -5,9 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Luma Verin</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="face.css" />
   </head>
   <body>
-    <div class="sigil"></div>
+<div class="neon-face-bg" aria-hidden>
+    <svg viewBox="0 0 800 800" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Neon one-line face profile with electric pulses running along the contour.">
+      <defs>
+        <!-- Soft inner glow to keep the base line readable on deep black -->
+        <filter id="innerGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="1.25" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+
+        <!-- Outer diffuse glow for ambience -->
+        <filter id="outerGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="12" result="b1" />
+          <feColorMatrix in="b1" type="matrix" values="
+            0 0 0 0 0.10
+            0 0 0 0 0.40
+            0 0 0 0 0.65
+            0 0 0 1 0" />
+        </filter>
+
+        <!-- Tighter glow for the bright pulses -->
+        <filter id="pulseGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="3.5" result="b2" />
+          <feMerge>
+            <feMergeNode in="b2" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+
+        <!-- The single-stroke face contour. pathLength=1 lets us use relative dash units. -->
+        <path id="faceLine" pathLength="1" d="
+          M 560 80
+          C 472 92, 430 150, 430 215
+          C 430 250, 454 270, 488 278
+          C 518 285, 520 320, 492 334
+          C 470 345, 454 360, 454 383
+          C 454 410, 473 425, 492 438
+          C 516 454, 506 478, 482 494
+          C 458 509, 440 540, 440 577
+          C 440 620, 418 648, 392 666
+          C 356 692, 340 720, 340 748
+        "/>
+
+        <!-- Small sparks that run along the path using SMIL animateMotion -->
+        <g id="spark">
+          <circle r="2.2" fill="#e6fbff" />
+          <circle r="6" fill="#ffffff" opacity="0.15" />
+        </g>
+      </defs>
+
+      <!-- Big ambient glow behind everything -->
+      <use href="#faceLine" class="line-glow" />
+
+      <!-- Crisp base line on top -->
+      <use href="#faceLine" class="line-base" />
+
+      <!-- Three separate pulse segments traveling along the path -->
+      <use href="#faceLine" class="line-pulse pulse1" />
+      <use href="#faceLine" class="line-pulse pulse2" />
+      <use href="#faceLine" class="line-pulse pulse3" />
+
+      <!-- Traveling sparks (optional electric pips) -->
+      <g class="spark">
+        <use href="#spark">
+          <animateMotion dur="var(--spark-speed-1)" repeatCount="indefinite" rotate="auto">
+            <mpath xlink:href="#faceLine" href="#faceLine" />
+          </animateMotion>
+        </use>
+        <use href="#spark" opacity="0.7">
+          <animateMotion begin="1s" dur="var(--spark-speed-2)" repeatCount="indefinite" rotate="auto">
+            <mpath xlink:href="#faceLine" href="#faceLine" />
+          </animateMotion>
+        </use>
+        <use href="#spark" opacity="0.55">
+          <animateMotion begin="2.2s" dur="var(--spark-speed-3)" repeatCount="indefinite" rotate="auto">
+            <mpath xlink:href="#faceLine" href="#faceLine" />
+          </animateMotion>
+        </use>
+      </g>
+
+    </svg>
+  </div>
     <h1>✶ Logbook</h1>
     <nav>
       <a href="index.html#about">∆</a>

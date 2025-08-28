@@ -1,0 +1,92 @@
+    :root {
+      --bg: #000000;
+      --neon: #1dd3ff;        /* main line color */
+      --neon-dim: #0a3452;    /* subtle outer glow tint */
+      --pulse: #c7f2ff;       /* bright pulse color */
+      --line-width: 2.2;      /* base stroke width */
+      --glow-width: 10;       /* outer glow thickness */
+      --pulse-width: 3.6;     /* pulse segment thickness */
+      --pulse-size: 0.09;     /* length of the moving dash, relative because of pathLength=1 */
+      --pulse-speed-1: 3.6s;
+      --pulse-speed-2: 5.2s;
+      --pulse-speed-3: 7.4s;
+      --spark-speed-1: 6s;
+      --spark-speed-2: 8s;
+      --spark-speed-3: 11s;
+      --opacity: 0.9;         /* overall opacity of the art */
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      margin: 0;
+    }
+
+    /*
+      Drop this <div> anywhere in your page (preferably near the top of <body>).
+      It is fixed behind everything and does not capture pointer events.
+    */
+    .neon-face-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background: var(--bg);
+      /* Optional: very subtle vignette so the face pops */
+      background-image:
+        radial-gradient(60% 60% at 60% 40%, rgba(0, 20, 40, 0.35), transparent 60%);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      opacity: var(--opacity);
+    }
+
+    /* Re-usable path styling via <use> */
+    .line-base {
+      fill: none;
+      stroke: var(--neon);
+      stroke-width: var(--line-width);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: url(#innerGlow);
+    }
+
+    .line-glow {
+      fill: none;
+      stroke: var(--neon);
+      stroke-width: var(--glow-width);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0.25;
+      filter: url(#outerGlow);
+    }
+
+    /* Moving pulse segments */
+    .line-pulse {
+      fill: none;
+      stroke: var(--pulse);
+      stroke-width: var(--pulse-width);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: var(--pulse-size) 1; /* with pathLength=1 this is relative */
+      animation: travel linear infinite;
+      filter: url(#pulseGlow);
+    }
+
+    .pulse1 { animation-duration: var(--pulse-speed-1); animation-delay: 0s; }
+    .pulse2 { animation-duration: var(--pulse-speed-2); animation-delay: 0.4s; }
+    .pulse3 { animation-duration: var(--pulse-speed-3); animation-delay: 1.1s; }
+
+    @keyframes travel {
+      from { stroke-dashoffset: 0; }
+      to   { stroke-dashoffset: -1; }
+    }
+
+    /* Accessibility: turn off animation for motion-sensitive users */
+    @media (prefers-reduced-motion: reduce) {
+      .line-pulse, .spark { animation: none !important; }
+      .spark animateMotion { display: none; }
+    }
