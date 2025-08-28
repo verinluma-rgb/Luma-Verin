@@ -105,17 +105,27 @@
 }
 
 .glitch-img {
-  position: relative;
-  width: 150px;
-  height: 150px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   overflow: hidden;
-  animation: ghost .4s 1;
+  display: none;
+  background-image: url(1.png);
+  filter: blur(1px);
 }
+
+.profile-pic:hover .glitch-img.glitching {
+    animation: ghost .4s 1;
+    display: block;
+}
+
 @keyframes ghost {
   0%, 100% { opacity: 0; }
   10% { opacity: 1; filter: hue-rotate(-90deg) saturate(200%)  brightness(150%) contrast(200%);}
-  30% { opacity: 1; filter: hue-rotate(90deg) brightness(100%) contrast(200%);}
+  /* 30% { opacity: 1; filter: hue-rotate(90deg) brightness(100%) contrast(200%);} */
   40% { opacity: 1; filter: hue-rotate(-90deg) saturate(200%)  brightness(150%) contrast(200%);}
   50% { transform: skewX(86deg); opacity: 1;}
   51% { transform: skewX(89deg); opacity: 1;}
