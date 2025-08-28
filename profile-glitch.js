@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const profilePic = document.querySelector('profile-container.profile-pic');
+  const profilePic = document.querySelector('.profile-pic');
   const glitchImg = profilePic.querySelector('.glitch-img');
   profilePic.addEventListener('mouseleave', () => {
     glitchImg.classList.remove('glitching');
