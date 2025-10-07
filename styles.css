@@ -89,6 +89,10 @@ section {
    border: 1px solid #555;
  }
 
+ a {
+  color: cyan;
+  text-decoration: ;
+ }
  button {
    padding: 0.5rem 1rem;
    background: #f5c66e;
